@@ -81,7 +81,7 @@
    0% { box-shadow: 0 0 0 0 var(--main-color); }
 }
 
- @keyframes gradient {
+@keyframes gradient {
 	0% {
 		background-position: 0% 50%;
 	}
@@ -92,5 +92,20 @@
 		background-position: 0% 50%;
 	}
 }
-
+@keyframes sidebarIn {
+   from {
+      left: -500px;
+   }
+   to {
+      left: 50px;
+   }
+}
+@keyframes sidebarOut {
+   from {
+      left: 50px;
+   }
+   to {
+      left: -500px;
+   }
+}
 

@@ -5,16 +5,18 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="font/themify-icons/themify-icons.css">
-   <link rel="stylesheet" href="/css/resetcss.css">
    <link rel="stylesheet" href="./css/boottrapCss/bootstrap.min.css">
+   <link rel="stylesheet" href="/css/resetcss.css">
    <link rel="stylesheet" href="css/keyframe.css">
    <link rel="stylesheet" href="css/main.css">
    <script src="./js/jquery-3.6.3.min.js"></script>
-   <link rel="stylesheet" href="./css/boottrapJS/bootstrap.min.js">
+   <!-- <link rel="stylesheet" href="./css/boottrapJS/bootstrap.min.js"> -->
+   <link rel="stylesheet" href="/css/reponsive.css">
    <title>Cửa Hàng Trang Trí Nội Thất</title>
 </head>
 <body>
    <div class="app">
+     
       <section id="header">
          <nav class="header_nav">
             <ul class="header_nav-list">
@@ -83,157 +85,162 @@
          </nav>
                         <!-- HEADER MAIN WITH SEARCH -->
          <header class="header_main">
-            
-            <div class="header_main_logo">
-               <img src="./Images/decor-low-resolution-logo-color-on-transparent-background.png" alt="">
-            </div>
-
-            <div class="header_main_input">
-               <input type="search" class="inp" list="history-search" placeholder="Bạn cần gì...?" spellcheck="off" >
-               <datalist id="history-search" class="header_main_input-history" >
-               </datalist>
-               <i class="search ti-search"></i>
-            </div>
-
-            <div class="header_main_cart">
-               <i class="ti-shopping-cart"></i>
-               <span class="header_main_cart-number">4</span>
-
-               <div class="header_main_cart-list">
-                  <h4>Đơn hàng mới thêm</h4>
-                  <ul class="header_main_cart-list-product">
-                     <li class="header_main_cart-item">
-                        <img class="cart-item-image" src="Images/Phòng ăn/Bàn ăn/ban-an-athos.jpg" alt="">
-                        <div class="cart-item-content">
-                           <h5 class="cart-item-content_header">Bàn ăn athos</h5>
-                           <p class="cart-item-content_classify">Phân loại: Nội thất nhà bếp</p>
-                        </div>
-                        <div class="cart-item-info">
-                           <span class="cart-item_unit-price">2000000đ</span>
-                           <span>x</span>
-                           <span class="cart-item-quantity">3</span>
-                           <br>
-                           <span class="cart-item-delete">Xoá</span>
-                        </div>
-                     </li>
-                     <li class="header_main_cart-item">
-                        <img class="cart-item-image" src="Images/Phòng ăn/Bàn ăn/ban-an-athos.jpg" alt="">
-                        <div class="cart-item-content">
-                           <h5 class="cart-item-content_header">Bàn ăn athos</h5>
-                           <h6 class="cart-item-content_classify">Phân loại: Nội thất nhà bếp</h6>
-                        </div>
-                        <div class="cart-item-info">
-                           <span class="cart-item_unit-price">2000000đ</span>
-                           <span>x</span>
-                           <span class="cart-item-quantity">3</span>
-                           <br>
-                           <span class="cart-item-delete">Xoá</span>
-                        </div>
-                     </li>
-                     <li class="header_main_cart-item">
-                        <img class="cart-item-image" src="Images/Phòng ăn/Bàn ăn/ban-an-athos.jpg" alt="">
-                        <div class="cart-item-content">
-                           <h5 class="cart-item-content_header">Bàn ăn athos</h5>
-                           <h6 class="cart-item-content_classify">Phân loại: Nội thất nhà bếp</h6>
-                        </div>
-                        <div class="cart-item-info">
-                           <span class="cart-item_unit-price">2000000đ</span>
-                           <span>x</span>
-                           <span class="cart-item-quantity">3</span>
-                           <br>
-                           <span class="cart-item-delete">Xoá</span>
-                        </div>
-                     </li>
-                     <li class="header_main_cart-item">
-                        <img class="cart-item-image" src="Images/Phòng ăn/Bàn ăn/ban-an-athos.jpg" alt="">
-                        <div class="cart-item-content">
-                           <h5 class="cart-item-content_header">Bàn ăn athos</h5>
-                           <h6 class="cart-item-content_classify">Phân loại: Nội thất nhà bếp</h6>
-                        </div>
-                        <div class="cart-item-info">
-                           <span class="cart-item_unit-price">2000000đ</span>
-                           <span>x</span>
-                           <span class="cart-item-quantity">3</span>
-                           <br>
-                           <span class="cart-item-delete">Xoá</span>
-                        </div>
-                     </li>
-                     <li class="header_main_cart-item">
-                        <img class="cart-item-image" src="Images/Phòng ăn/Bàn ăn/ban-an-athos.jpg" alt="">
-                        <div class="cart-item-content">
-                           <h5 class="cart-item-content_header">Bàn ăn athos</h5>
-                           <h6 class="cart-item-content_classify">Phân loại: Nội thất nhà bếp</h6>
-                        </div>
-                        <div class="cart-item-info">
-                           <span class="cart-item_unit-price">2000000đ</span>
-                           <span>x</span>
-                           <span class="cart-item-quantity">3</span>
-                           <br>
-                           <span class="cart-item-delete">Xoá</span>
-                        </div>
-                     </li>
-                     <li class="header_main_cart-item">
-                        <img class="cart-item-image" src="Images/Phòng ăn/Bàn ăn/ban-an-athos.jpg" alt="">
-                        <div class="cart-item-content">
-                           <h5 class="cart-item-content_header">Bàn ăn athos</h5>
-                           <h6 class="cart-item-content_classify">Phân loại: Nội thất nhà bếp</h6>
-                        </div>
-                        <div class="cart-item-info">
-                           <span class="cart-item_unit-price">2000000đ</span>
-                           <span>x</span>
-                           <span class="cart-item-quantity">3</span>
-                           <br>
-                           <span class="cart-item-delete">Xoá</span>
-                        </div>
-                     </li>
-                     <li class="header_main_cart-item">
-                        <img class="cart-item-image" src="Images/Phòng ăn/Bàn ăn/ban-an-athos.jpg" alt="">
-                        <div class="cart-item-content">
-                           <h5 class="cart-item-content_header">Bàn ăn athos</h5>
-                           <h6 class="cart-item-content_classify">Phân loại: Nội thất nhà bếp</h6>
-                        </div>
-                        <div class="cart-item-info">
-                           <span class="cart-item_unit-price">2000000đ</span>
-                           <span>x</span>
-                           <span class="cart-item-quantity">3</span>
-                           <br>
-                           <span class="cart-item-delete">Xoá</span>
-                        </div>
-                     </li>
-                     <li class="header_main_cart-item">
-                        <img class="cart-item-image" src="Images/Phòng ăn/Bàn ăn/ban-an-athos.jpg" alt="">
-                        <div class="cart-item-content">
-                           <h5 class="cart-item-content_header">Bàn ăn athos</h5>
-                           <h6 class="cart-item-content_classify">Phân loại: Nội thất nhà bếp</h6>
-                        </div>
-                        <div class="cart-item-info">
-                           <span class="cart-item_unit-price">2000000đ</span>
-                           <span>x</span>
-                           <span class="cart-item-quantity">3</span>
-                           <br>
-                           <span class="cart-item-delete">Xoá</span>
-                        </div>
-                     </li>
-                     <li class="header_main_cart-item">
-                        <img class="cart-item-image" src="Images/Phòng ăn/Bàn ăn/ban-an-athos.jpg" alt="">
-                        <div class="cart-item-content">
-                           <h5 class="cart-item-content_header">Bàn ăn athos</h5>
-                           <h6 class="cart-item-content_classify">Phân loại: Nội thất nhà bếp</h6>
-                        </div>
-                        <div class="cart-item-info">
-                           <span class="cart-item_unit-price">2000000đ</span>
-                           <span>x</span>
-                           <span class="cart-item-quantity">3</span>
-                           <br>
-                           <span class="cart-item-delete">Xoá</span>
-                        </div>
-                     </li>
-                  </ul>
+               <div class="search-icon-mobile">
+                  <i class="ti-search"></i>
                </div>
-            </div>
+
+               <div class="header_main_logo">
+                  <a href="#"><img src="./Images/decor-low-resolution-logo-color-on-transparent-background.png" alt=""></a>
+               </div>
+   
+               <div class="header_main_input ">
+                  <input type="search" class="inp" list="history-search" placeholder="Bạn cần gì...?" spellcheck="off" >
+                  <datalist id="history-search" class="header_main_input-history" >
+                  </datalist>
+                  <i class="search ti-search"></i>
+               </div>
+   
+               <div class="header_main_cart ">
+                  <i class="ti-shopping-cart"></i>
+                  <span class="header_main_cart-number">4</span>
+   
+                  <div class="header_main_cart-list">
+                     <h4>Đơn hàng mới thêm</h4>
+                     <ul class="header_main_cart-list-product">
+                        <li class="header_main_cart-item">
+                           <img class="cart-item-image" src="Images/Phòng ăn/Bàn ăn/ban-an-athos.jpg" alt="">
+                           <div class="cart-item-content">
+                              <h5 class="cart-item-content_header">Bàn ăn athos</h5>
+                              <p class="cart-item-content_classify">Phân loại: Nội thất nhà bếp</p>
+                           </div>
+                           <div class="cart-item-info">
+                              <span class="cart-item_unit-price">2000000đ</span>
+                              <span>x</span>
+                              <span class="cart-item-quantity">3</span>
+                              <br>
+                              <span class="cart-item-delete">Xoá</span>
+                           </div>
+                        </li>
+                        <li class="header_main_cart-item">
+                           <img class="cart-item-image" src="Images/Phòng ăn/Bàn ăn/ban-an-athos.jpg" alt="">
+                           <div class="cart-item-content">
+                              <h5 class="cart-item-content_header">Bàn ăn athos</h5>
+                              <h6 class="cart-item-content_classify">Phân loại: Nội thất nhà bếp</h6>
+                           </div>
+                           <div class="cart-item-info">
+                              <span class="cart-item_unit-price">2000000đ</span>
+                              <span>x</span>
+                              <span class="cart-item-quantity">3</span>
+                              <br>
+                              <span class="cart-item-delete">Xoá</span>
+                           </div>
+                        </li>
+                        <li class="header_main_cart-item">
+                           <img class="cart-item-image" src="Images/Phòng ăn/Bàn ăn/ban-an-athos.jpg" alt="">
+                           <div class="cart-item-content">
+                              <h5 class="cart-item-content_header">Bàn ăn athos</h5>
+                              <h6 class="cart-item-content_classify">Phân loại: Nội thất nhà bếp</h6>
+                           </div>
+                           <div class="cart-item-info">
+                              <span class="cart-item_unit-price">2000000đ</span>
+                              <span>x</span>
+                              <span class="cart-item-quantity">3</span>
+                              <br>
+                              <span class="cart-item-delete">Xoá</span>
+                           </div>
+                        </li>
+                        <li class="header_main_cart-item">
+                           <img class="cart-item-image" src="Images/Phòng ăn/Bàn ăn/ban-an-athos.jpg" alt="">
+                           <div class="cart-item-content">
+                              <h5 class="cart-item-content_header">Bàn ăn athos</h5>
+                              <h6 class="cart-item-content_classify">Phân loại: Nội thất nhà bếp</h6>
+                           </div>
+                           <div class="cart-item-info">
+                              <span class="cart-item_unit-price">2000000đ</span>
+                              <span>x</span>
+                              <span class="cart-item-quantity">3</span>
+                              <br>
+                              <span class="cart-item-delete">Xoá</span>
+                           </div>
+                        </li>
+                        <li class="header_main_cart-item">
+                           <img class="cart-item-image" src="Images/Phòng ăn/Bàn ăn/ban-an-athos.jpg" alt="">
+                           <div class="cart-item-content">
+                              <h5 class="cart-item-content_header">Bàn ăn athos</h5>
+                              <h6 class="cart-item-content_classify">Phân loại: Nội thất nhà bếp</h6>
+                           </div>
+                           <div class="cart-item-info">
+                              <span class="cart-item_unit-price">2000000đ</span>
+                              <span>x</span>
+                              <span class="cart-item-quantity">3</span>
+                              <br>
+                              <span class="cart-item-delete">Xoá</span>
+                           </div>
+                        </li>
+                        <li class="header_main_cart-item">
+                           <img class="cart-item-image" src="Images/Phòng ăn/Bàn ăn/ban-an-athos.jpg" alt="">
+                           <div class="cart-item-content">
+                              <h5 class="cart-item-content_header">Bàn ăn athos</h5>
+                              <h6 class="cart-item-content_classify">Phân loại: Nội thất nhà bếp</h6>
+                           </div>
+                           <div class="cart-item-info">
+                              <span class="cart-item_unit-price">2000000đ</span>
+                              <span>x</span>
+                              <span class="cart-item-quantity">3</span>
+                              <br>
+                              <span class="cart-item-delete">Xoá</span>
+                           </div>
+                        </li>
+                        <li class="header_main_cart-item">
+                           <img class="cart-item-image" src="Images/Phòng ăn/Bàn ăn/ban-an-athos.jpg" alt="">
+                           <div class="cart-item-content">
+                              <h5 class="cart-item-content_header">Bàn ăn athos</h5>
+                              <h6 class="cart-item-content_classify">Phân loại: Nội thất nhà bếp</h6>
+                           </div>
+                           <div class="cart-item-info">
+                              <span class="cart-item_unit-price">2000000đ</span>
+                              <span>x</span>
+                              <span class="cart-item-quantity">3</span>
+                              <br>
+                              <span class="cart-item-delete">Xoá</span>
+                           </div>
+                        </li>
+                        <li class="header_main_cart-item">
+                           <img class="cart-item-image" src="Images/Phòng ăn/Bàn ăn/ban-an-athos.jpg" alt="">
+                           <div class="cart-item-content">
+                              <h5 class="cart-item-content_header">Bàn ăn athos</h5>
+                              <h6 class="cart-item-content_classify">Phân loại: Nội thất nhà bếp</h6>
+                           </div>
+                           <div class="cart-item-info">
+                              <span class="cart-item_unit-price">2000000đ</span>
+                              <span>x</span>
+                              <span class="cart-item-quantity">3</span>
+                              <br>
+                              <span class="cart-item-delete">Xoá</span>
+                           </div>
+                        </li>
+                        <li class="header_main_cart-item">
+                           <img class="cart-item-image" src="Images/Phòng ăn/Bàn ăn/ban-an-athos.jpg" alt="">
+                           <div class="cart-item-content">
+                              <h5 class="cart-item-content_header">Bàn ăn athos</h5>
+                              <h6 class="cart-item-content_classify">Phân loại: Nội thất nhà bếp</h6>
+                           </div>
+                           <div class="cart-item-info">
+                              <span class="cart-item_unit-price">2000000đ</span>
+                              <span>x</span>
+                              <span class="cart-item-quantity">3</span>
+                              <br>
+                              <span class="cart-item-delete">Xoá</span>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
 
          </header>
       </section>
+     
+    
       <!-- MAIN -->
       <section id="main">
                            <!-- MAIN SLIDE PRODUCT -->
@@ -300,32 +307,37 @@
 
             </div>
         
-         </div>
+         </div>   
 
          <div id="main_product">
-            <div class="main_product-sidebar">
 
+               <div class="menu-sidebar-mobile">
+                  <i class="ti-menu"></i>
+               </div>
+               <!-- SIDEBAR -->
+            <div class="main_product-sidebar">
+           
                <div class="main_product-sidebar-category">
                   <h3 class="main_product-sidebar-header">
                      <i class="ti-menu"></i>
                      <span>Danh mục</span>
                   </h3>
                   <ul class="main_product-sidebar-list">
-                     <li class="main_product-sidebar-item">
+                     <li class="main_product-sidebar-item phong-lam-viec">
                         <i class="ti-angle-right"></i>
-                        <span>Phòng tắm</span>
+                        <span>Phòng làm việc</span>
                      </li>
-                     <li class="main_product-sidebar-item">
+                     <li class="main_product-sidebar-item phong-khach">
                         <i class="ti-angle-right"></i>
                         <span>Phòng khách</span>
                      </li>
-                     <li class="main_product-sidebar-item">
+                     <li class="main_product-sidebar-item phong-an">
                         <i class="ti-angle-right"></i>
                         <span>Phòng ăn</span>
                      </li>
-                     <li class="main_product-sidebar-item">
+                     <li class="main_product-sidebar-item phong-bep">
                         <i class="ti-angle-right"></i>
-                        <span>Phòng ngủ</span>
+                        <span>Phòng bếp</span>
                      </li>
                      <li class="main_product-sidebar-item">
                         <i class="ti-angle-right"></i>
@@ -333,7 +345,6 @@
                      </li>
                   </ul>
                </div>
-
                <div class="main_product-sidebar-category">
                   <h3 class="main_product-sidebar-header">
                      <i class="ti-menu"></i>
@@ -354,29 +365,28 @@
                      </li>
                   </ul>
                </div>
-
-               <div class="main_product-sidebar-category">
+               <div class="main_product-sidebar-category ">
                   <h3 class="main_product-sidebar-header">
                      <i class="ti-menu"></i>
                      <span>Khoảng giá</span>
                   </h3>
                   <ul class="main_product-sidebar-list">
                      <li class="main_product-sidebar-item">
-                        <input type="number" min="0" step="1000000" placeholder="TỪ (đ)">
+                        <input type="number" min="0" step="10000" class="filter-price-min" placeholder="TỪ (đ)">
                      </li>
-                     <li class="main_product-sidebar-item" 
+                     <li class="main_product-sidebar-item"
                      style="border-top: none;"        >
-                        <input type="number" min="50000" max="1000000000" step="1000000"
+                        <input type="number" min="50000" max="1000000000" step="100000"
+                        class="filter-price-max" 
                         placeholder="ĐẾN (đ)">
                      </li>
-                     <li 
-                        class="main_product-sidebar-item" 
+                     <li
+                        class="main_product-sidebar-item"
                         style="border-top: none;"     >
-                        <input type="submit" value="ÁP DỤNG">
+                        <input type="submit" value="ÁP DỤNG" class="submit-filter-price">
                      </li>
                   </ul>
                </div>
-               
                <div class="main_product-sidebar-category">
                   <h3 class="main_product-sidebar-header">
                      <i class="ti-menu"></i>
@@ -393,7 +403,6 @@
                      </li>
                   </ul>
                </div>
-               
                <div class="main_product-sidebar-category">
                   <h3 class="main_product-sidebar-header">
                      <i class="ti-menu"></i>
@@ -417,12 +426,14 @@
                      </li>
                   </ul>
                </div>
-
+           
             </div>
 
+
             <div class="main_product-container">
+               <!-- FILTER PRODUDCT -->
                <div class="main_product-filter">
-                  
+      
                   <div class="main_product-filter-left">
                      <span>Sắp xếp theo</span>
                      <button class="active">Phổ biến</button>
@@ -434,377 +445,48 @@
                      </select>
                      <i class="ti-angle-down"></i>
                   </div>
-
                   <div class="main_product-filter-right">
                      <div class="main_product-filter-right_numpage">
                         <span class="current_numpage">1</span>
                         <span>/</span>
                         <span class="total_numpage">4</span>
                      </div>
-                     <div class="numpage_switchBtn">
+                     <div class="numpage_switchBtn ">
                         <i class="ti-angle-left"></i>
                         <i class="canUse ti-angle-right"></i>
                      </div>
                   </div>
                </div>
 
-               <div class="main_product-list">
-                  <div class="main_product-item">
-
-                     <div class="main_product-item-img">
-                        <img src="./Images/Phòng khách/Bàn/3105924.jpg" alt="">
-                        <div class="discount">
-                              <span class="num_discount">50%</span>
-                              <span>Giảm</span>
-                        </div>
-                     </div>
-
-                     <h3 class="main_product-item_description">
-                        Đồng hồ thể thao điện tử mẫu đẹpĐồng hồ thể thao điện tử mẫu đẹp Đồng hồ thể thao điện tử mẫu đẹp Đồng hồ thể thao điện tử mẫu đẹp
-                     </h3>
-
-                     <div class="main_product-item_note">
-                        <span>Mua 3 & giảm đ1.000</span>
-                     </div>
-
-                     <div class="main_product-item_price">
-                        <span>đ9000</span>
-                        <span>-</span>
-                        <span>đ32.544</span>
-                     </div>
-
-                     <div class="main_product-item-wrap">
-                        <div class="main_product-item_rate">
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="ti-star"></i>
-                        </div>
-                        <div class="main_product-item_numSold">Đã bán 666</div>
-                     </div>
-
-                     <div class="main_product-item_status">
-                        Đã hết hàng
-                     </div>
+               <div class="main_product-filter--mobile">
+      
+                  <div class="main_product-filter-left">
+                     <button class="active">Phổ biến</button>
+                     <button>Mới nhất</button>
+                     <button>Bán chạy</button>
+                     <select>
+                        <option value="asc">Giá: Thấp đến cao</option>
+                        <option value="desc">Giá: Cao đến Thấp</option>
+                     </select>
                   </div>
-                  
-                  <div class="main_product-item">
-
-                     <div class="main_product-item-img">
-                        <img src="./Images/Phòng khách/Bàn/3105924.jpg" alt="">
-                        <div class="discount">
-                              <span class="num_discount">50%</span>
-                              <span>Giảm</span>
+                  <div class="main_product-filter-right">
+                     <div class="numpage_switchBtn ">
+                        <i class="ti-angle-left"></i>
+                        <div class="main_product-filter-right_numpage">
+                           <span class="current_numpage">1</span>
+                           <span>/</span>
+                           <span class="total_numpage">4</span>
                         </div>
-                     </div>
-
-                     <h3 class="main_product-item_description">
-                        Đồng hồ thể thao điện tử mẫu đẹpĐồng hồ thể thao điện tử mẫu đẹp Đồng hồ thể thao điện tử mẫu đẹp Đồng hồ thể thao điện tử mẫu đẹp
-                     </h3>
-
-                     <div class="main_product-item_note">
-                        <span>Mua 3 & giảm đ1.000</span>
-                     </div>
-
-                     <div class="main_product-item_price">
-                        <span>đ9000</span>
-                        <span>-</span>
-                        <span>đ32.544</span>
-                     </div>
-
-                     <div class="main_product-item-wrap">
-                        <div class="main_product-item_rate">
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="ti-star"></i>
-                        </div>
-                        <div class="main_product-item_numSold">Đã bán 666</div>
-                     </div>
-
-                     <div class="main_product-item_status">
-                        Đã hết hàng
-                     </div>
-                  </div>
-                  <div class="main_product-item">
-
-                     <div class="main_product-item-img">
-                        <img src="./Images/Phòng khách/Bàn/3105924.jpg" alt="">
-                        <div class="discount">
-                              <span class="num_discount">50%</span>
-                              <span>Giảm</span>
-                        </div>
-                     </div>
-
-                     <h3 class="main_product-item_description">
-                        Đồng hồ thể thao điện tử mẫu đẹpĐồng hồ thể thao điện tử mẫu đẹp Đồng hồ thể thao điện tử mẫu đẹp Đồng hồ thể thao điện tử mẫu đẹp
-                     </h3>
-
-                     <div class="main_product-item_note">
-                        <span>Mua 3 & giảm đ1.000</span>
-                     </div>
-
-                     <div class="main_product-item_price">
-                        <span>đ9000</span>
-                        <span>-</span>
-                        <span>đ32.544</span>
-                     </div>
-
-                     <div class="main_product-item-wrap">
-                        <div class="main_product-item_rate">
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="ti-star"></i>
-                        </div>
-                        <div class="main_product-item_numSold">Đã bán 666</div>
-                     </div>
-
-                     <div class="main_product-item_status">
-                        Đã hết hàng
-                     </div>
-                  </div>
-                  <div class="main_product-item">
-
-                     <div class="main_product-item-img">
-                        <img src="./Images/Phòng khách/Bàn/3105924.jpg" alt="">
-                        <div class="discount">
-                              <span class="num_discount">50%</span>
-                              <span>Giảm</span>
-                        </div>
-                     </div>
-
-                     <h3 class="main_product-item_description">
-                        Đồng hồ thể thao điện tử mẫu đẹpĐồng hồ thể thao điện tử mẫu đẹp Đồng hồ thể thao điện tử mẫu đẹp Đồng hồ thể thao điện tử mẫu đẹp
-                     </h3>
-
-                     <div class="main_product-item_note">
-                        <span>Mua 3 & giảm đ1.000</span>
-                     </div>
-
-                     <div class="main_product-item_price">
-                        <span>đ9000</span>
-                        <span>-</span>
-                        <span>đ32.544</span>
-                     </div>
-
-                     <div class="main_product-item-wrap">
-                        <div class="main_product-item_rate">
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="ti-star"></i>
-                        </div>
-                        <div class="main_product-item_numSold">Đã bán 666</div>
-                     </div>
-
-                     <div class="main_product-item_status">
-                        Đã hết hàng
-                     </div>
-                  </div>
-                  <div class="main_product-item">
-
-                     <div class="main_product-item-img">
-                        <img src="./Images/Phòng khách/Bàn/3105924.jpg" alt="">
-                        <div class="discount">
-                              <span class="num_discount">50%</span>
-                              <span>Giảm</span>
-                        </div>
-                     </div>
-
-                     <h3 class="main_product-item_description">
-                        Đồng hồ thể thao điện tử mẫu đẹpĐồng hồ thể thao điện tử mẫu đẹp Đồng hồ thể thao điện tử mẫu đẹp Đồng hồ thể thao điện tử mẫu đẹp
-                     </h3>
-
-                     <div class="main_product-item_note">
-                        <span>Mua 3 & giảm đ1.000</span>
-                     </div>
-
-                     <div class="main_product-item_price">
-                        <span>đ9000</span>
-                        <span>-</span>
-                        <span>đ32.544</span>
-                     </div>
-
-                     <div class="main_product-item-wrap">
-                        <div class="main_product-item_rate">
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="ti-star"></i>
-                        </div>
-                        <div class="main_product-item_numSold">Đã bán 666</div>
-                     </div>
-
-                     <div class="main_product-item_status">
-                        Đã hết hàng
-                     </div>
-                  </div>
-                  <div class="main_product-item">
-
-                     <div class="main_product-item-img">
-                        <img src="./Images/Phòng khách/Bàn/3105924.jpg" alt="">
-                        <div class="discount">
-                              <span class="num_discount">50%</span>
-                              <span>Giảm</span>
-                        </div>
-                     </div>
-
-                     <h3 class="main_product-item_description">
-                        Đồng hồ thể thao điện tử mẫu đẹpĐồng hồ thể thao điện tử mẫu đẹp Đồng hồ thể thao điện tử mẫu đẹp Đồng hồ thể thao điện tử mẫu đẹp
-                     </h3>
-
-                     <div class="main_product-item_note">
-                        <span>Mua 3 & giảm đ1.000</span>
-                     </div>
-
-                     <div class="main_product-item_price">
-                        <span>đ9000</span>
-                        <span>-</span>
-                        <span>đ32.544</span>
-                     </div>
-
-                     <div class="main_product-item-wrap">
-                        <div class="main_product-item_rate">
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="ti-star"></i>
-                        </div>
-                        <div class="main_product-item_numSold">Đã bán 666</div>
-                     </div>
-
-                     <div class="main_product-item_status">
-                        Đã hết hàng
-                     </div>
-                  </div>
-                  <div class="main_product-item">
-
-                     <div class="main_product-item-img">
-                        <img src="./Images/Phòng khách/Bàn/3105924.jpg" alt="">
-                        <div class="discount">
-                              <span class="num_discount">50%</span>
-                              <span>Giảm</span>
-                        </div>
-                     </div>
-
-                     <h3 class="main_product-item_description">
-                        Đồng hồ thể thao điện tử mẫu đẹpĐồng hồ thể thao điện tử mẫu đẹp Đồng hồ thể thao điện tử mẫu đẹp Đồng hồ thể thao điện tử mẫu đẹp
-                     </h3>
-
-                     <div class="main_product-item_note">
-                        <span>Mua 3 & giảm đ1.000</span>
-                     </div>
-
-                     <div class="main_product-item_price">
-                        <span>đ9000</span>
-                        <span>-</span>
-                        <span>đ32.544</span>
-                     </div>
-
-                     <div class="main_product-item-wrap">
-                        <div class="main_product-item_rate">
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="ti-star"></i>
-                        </div>
-                        <div class="main_product-item_numSold">Đã bán 666</div>
-                     </div>
-
-                     <div class="main_product-item_status">
-                        Đã hết hàng
-                     </div>
-                  </div>
-                  <div class="main_product-item">
-
-                     <div class="main_product-item-img">
-                        <img src="./Images/Phòng khách/Bàn/3105924.jpg" alt="">
-                        <div class="discount">
-                              <span class="num_discount">50%</span>
-                              <span>Giảm</span>
-                        </div>
-                     </div>
-
-                     <h3 class="main_product-item_description">
-                        Đồng hồ thể thao điện tử mẫu đẹpĐồng hồ thể thao điện tử mẫu đẹp Đồng hồ thể thao điện tử mẫu đẹp Đồng hồ thể thao điện tử mẫu đẹp
-                     </h3>
-
-                     <div class="main_product-item_note">
-                        <span>Mua 3 & giảm đ1.000</span>
-                     </div>
-
-                     <div class="main_product-item_price">
-                        <span>đ9000</span>
-                        <span>-</span>
-                        <span>đ32.544</span>
-                     </div>
-
-                     <div class="main_product-item-wrap">
-                        <div class="main_product-item_rate">
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="ti-star"></i>
-                        </div>
-                        <div class="main_product-item_numSold">Đã bán 666</div>
-                     </div>
-
-                     <div class="main_product-item_status">
-                        Đã hết hàng
-                     </div>
-                  </div>
-                  <div class="main_product-item">
-
-                     <div class="main_product-item-img">
-                        <img src="./Images/Phòng khách/Bàn/3105924.jpg" alt="">
-                        <div class="discount">
-                              <span class="num_discount">50%</span>
-                              <span>Giảm</span>
-                        </div>
-                     </div>
-
-                     <h3 class="main_product-item_description">
-                        Đồng hồ thể thao điện tử mẫu đẹpĐồng hồ thể thao điện tử mẫu đẹp Đồng hồ thể thao điện tử mẫu đẹp Đồng hồ thể thao điện tử mẫu đẹp
-                     </h3>
-
-                     <div class="main_product-item_note">
-                        <span>Mua 3 & giảm đ1.000</span>
-                     </div>
-
-                     <div class="main_product-item_price">
-                        <span>đ9000</span>
-                        <span>-</span>
-                        <span>đ32.544</span>
-                     </div>
-
-                     <div class="main_product-item-wrap">
-                        <div class="main_product-item_rate">
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="rated ti-star"></i>
-                           <i class="ti-star"></i>
-                        </div>
-                        <div class="main_product-item_numSold">Đã bán 666</div>
-                     </div>
-
-                     <div class="main_product-item_status">
-                        Đã hết hàng
+                        <i class="canUse ti-angle-right"></i>
                      </div>
                   </div>
                </div>
-            </div>
+               <!-- LIST PRODUCT -->
+               <div class="main_product-list">
+               </div>
 
-            
+            </div>
+         
          </div>
       </section>
 
@@ -855,7 +537,6 @@
          
       </footer>
    </div>
- 
    <script src="js/main.js"></script>
 </body>
 </html>

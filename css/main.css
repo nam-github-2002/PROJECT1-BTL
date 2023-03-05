@@ -1,15 +1,4 @@
 
-@import url(/font/);
-@font-face {
-   font-family: poppin;
-   src:  url(/font/Poppins-Black.ttf),
-         url(/font/Poppins-BlackItalic.ttf),
-         url(/font/Poppins-Bold.ttf),
-         url(/font/Poppins-Medium.ttf),
-         url(/font/Poppins-Light.ttf),
-         url(/font/*.ttf)
-         ;
-}
 @font-face {
    font-family: roboto;
    src:  url(/font/Roboto/Roboto-Black.ttf),
@@ -45,10 +34,12 @@ html {
    --yellow: #ff9d0095;
    --yellow1:rgb(255, 115, 0);
 }
-
+.main_product-filter--mobile {
+   display: none;
+}
 .app {
-   /* width: 100%; */
    position: relative;
+   padding: 0  calc((100% - 1200px)/2);
    background-image: linear-gradient(to bottom right, #c3d6e2 0%, #e6f4fb 100%);
    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
@@ -59,9 +50,7 @@ html {
    z-index: 10;
    height: var(--height-header);
    color: var(--fontColor);
-   width: 100%;
-   padding: 0 160px;
-   height: auto;
+   margin-bottom: 20px;
 }
 .header_nav {
    font-weight: 500;
@@ -368,6 +357,9 @@ html {
    width: 100%;
    height: auto;
 }
+.search-icon-mobile {
+   display: none;
+}
 .header_main_logo {
    width: 250px;
    height: 80px;
@@ -601,21 +593,16 @@ input::-webkit-calendar-picker-indicator {
 
 #main {
    position: relative;
-   display: block;
-   width: 100%;
-   height: auto;
-   padding: 1% 158px;
-   gap: 40px;
 }
 .main_slide-product {
    position: relative;
    height: calc(100vh - var(--height-header) - 20px);
-   overflow: hidden;
    position: relative;
    bottom: 20px;
    box-shadow: 
    3px 3px 3px 2px rgba(0, 0, 0, 0.1),
    3px 3px 8px 4px rgba(0, 0, 0, 0.1);
+   overflow: hidden;
 }
 .main_slide-product a {
    display: block;
@@ -798,14 +785,13 @@ input::-webkit-calendar-picker-indicator {
 #main_product {
    display: flex;
    height: auto;
-   width: 100%;
-   background-color: transparent;
-   overflow: hidden;
    gap: 10px;
+   background-color: transparent;
 }
                            /* MAIN PRODUCT SIDEBAR */
 .main_product-sidebar {
-   width: 193px;
+   display: block;
+   width: 190px;
    height: 100vh;
    color: white;
    border: 1px solid rgb(255, 255, 255);
@@ -813,7 +799,12 @@ input::-webkit-calendar-picker-indicator {
    overflow-x: hidden;
    overflow-y: scroll;
    scroll-behavior: smooth;
-   
+}
+.main_product-sidebar .close {
+   display: none;
+}
+.menu-sidebar-mobile {
+   display: none;
 }
 .main_product-sidebar::-webkit-scrollbar {
    display: none;
@@ -826,7 +817,6 @@ input::-webkit-calendar-picker-indicator {
    font-weight: 600;
    text-transform: capitalize;
    padding: 20px 15px;
-   margin: 0;
    background-color: rgba(255, 255, 255, 0.2);
 }
 .main_product-sidebar-list {
@@ -836,7 +826,7 @@ input::-webkit-calendar-picker-indicator {
 .main_product-sidebar-item {
    display: flex;
    place-items: center;
-   padding: 20px 20px;
+   padding: 20px 20px;  
    margin: 0;
    font-size: 1.2rem;
    font-weight: 500;
@@ -906,21 +896,22 @@ input::-webkit-calendar-picker-indicator {
 .main_product-container {
    display: flex;
    flex-direction: column;
-   flex: 1;
    height: auto;
-   gap: 8px;
+   flex: 1;
+   max-width: 998.33px;
 
 }
 .main_product-filter {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   width: 100%;
-   height: 80px;
+   flex-wrap: wrap;
+   min-height: 70px;
+   height: fit-content;
    padding: 5px 20px;
    border: 1px solid rgb(255, 255, 255);
    font-weight: 500;
-   font-size: 1.5rem;
+   font-size: 1.3rem;
    color: white;
    background-color: rgba(255, 255, 255, 0.1);
 }
@@ -974,7 +965,8 @@ input::-webkit-calendar-picker-indicator {
    transform: translateY(-37%);
 }
 .active, .main_product-filter-left button:hover  {
-   font-size: 1.9rem;
+   font-size: 1.5rem;
+   font-weight: 600;
    background-color: rgba(255, 255, 255, 0.3);
    border: 4px solid white;
 }
@@ -988,9 +980,9 @@ input::-webkit-calendar-picker-indicator {
 .main_product-filter-right_numpage {
    margin-right: 10px;
 }
-.main_product-filter-right_numpage 
+.main_product-filter-right_numpage
 .current_numpage {
-  color: black;
+  color: rgb(255, 255, 255);
 }
 .numpage_switchBtn {
    margin-left: 10px;
@@ -1011,20 +1003,18 @@ input::-webkit-calendar-picker-indicator {
 .main_product-list {
    display: flex;
    justify-content: flex-start;
+   align-items: flex-start;
    align-content: flex-start;
    flex-wrap: wrap;
-   flex: 1;
+   margin-top: 10px;
    gap: 10px;
-   height: auto;
-   width: auto;
    background-color: rgba(255, 255, 255, 0.02);
-   border: 1px solid rgb(255, 255, 255);
-   transition: .25s;
-   padding: 4px;
+   transition:  .25s;
+   overflow: hidden;
 }
 .main_product-item {
-   width: 190px;
-   height: 335px;
+   max-width: 191px;
+   height: 330px;
    background-color: rgba(255, 255, 255, 0.24);
    color: white;
    border-radius: 3px;
@@ -1039,9 +1029,9 @@ input::-webkit-calendar-picker-indicator {
    position: relative;
    width: 100%;
    height: 180px;
-   border-radius: 3px;
 }
 .main_product-item-img img {
+   border-radius: 3px;
    width: 100%;
    height: 100%;
 }
@@ -1112,16 +1102,19 @@ input::-webkit-calendar-picker-indicator {
 .main_product-item_price {
    color: rgb(255, 255, 255);
    text-shadow: white;
-   margin: 16px 8px;
-   font-size: 1.6rem;
+   margin: 8px;
+   font-size: 1.4rem;
    font-weight: 400;
    mix-blend-mode: difference;
+}
+.second-price {
+   text-decoration: line-through;
 }
 .main_product-item:hover .main_product-item_price span{
    color: rgb(0, 0, 0);
 }
 .main_product-item-wrap {
-   margin: 16px 8px;
+   margin: 8px;
    display: flex;
    align-items: center;
    justify-content: space-between;
@@ -1147,15 +1140,14 @@ input::-webkit-calendar-picker-indicator {
 #footer {
    display: flex;
    justify-content: space-between;
+   align-items: stretch;
    flex-wrap: wrap;
-   width: 80%;
-   margin: 25px auto 0;
-   padding: 66px 0;
-   border-top: 1px solid white;
+   margin-top: 100px;
+   padding: 50px ;
+   border-radius: 10px;
+   background-color: rgba(255, 255, 255, 0.1);
 }
 .footer-block {
-   position: relative;
-   margin: 0 auto;
    width: 20%;
    color: white;
    background-color: rgba(255, 255, 255, 0.2);
@@ -1163,12 +1155,10 @@ input::-webkit-calendar-picker-indicator {
    border: 1px solid white;
 }
 .footer-block h2 {
-   position: absolute;
-   top: 0;
-   left: 20px;
-   transform: translateY(-100%);
+   text-align: center;
    border: 8px solid transparent;
-   font-size: 1.5rem;
+   font-size: 1.3rem;
+   font-weight: 600;
    text-transform: uppercase;
    background-blend-mode: difference;
 }
@@ -1176,7 +1166,7 @@ input::-webkit-calendar-picker-indicator {
    display: block;
    color: white;
    font-size: 1.4rem;
-   margin: 10px 0;
+   margin: 20px 0;
    padding-left: 20px;
    text-decoration: none;
    text-transform: capitalize;
