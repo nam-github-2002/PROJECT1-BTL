@@ -17,6 +17,7 @@
 <body>
    <div class="app">
      
+      <!-- HEADER -->
       <section id="header">
          <nav class="header_nav">
             <ul class="header_nav-list">
@@ -240,7 +241,6 @@
          </header>
       </section>
      
-    
       <!-- MAIN -->
       <section id="main">
                            <!-- MAIN SLIDE PRODUCT -->
@@ -256,11 +256,11 @@
             </button>
 
             <div class="chooseSlide">
-               <input type="radio" class="active-input-radio" value="0">
-               <input type="radio" value="100">
-               <input type="radio" value="200">
-               <input type="radio" value="300">
-               <input type="radio" value="400">
+               <input type="radio" class="slide_dot active-dot-slide" value="0"></input>
+               <input type="radio" class="slide_dot" value="100"></input>
+               <input type="radio" class="slide_dot" value="200"></input>
+               <input type="radio" class="slide_dot" value="300"></input>
+               <input type="radio" class="slide_dot" value="400"></input>
             </div>
             
             <div class="main-slider">
@@ -339,9 +339,9 @@
                         <i class="ti-angle-right"></i>
                         <span>Phòng bếp</span>
                      </li>
-                     <li class="main_product-sidebar-item">
+                     <li class="main_product-sidebar-item default">
                         <i class="ti-angle-right"></i>
-                        <span>Ngoài ban công</span>
+                        <span>Tất cả</span>
                      </li>
                   </ul>
                </div>
@@ -490,6 +490,73 @@
          </div>
       </section>
 
+      <!-- DETAIL -->
+      <div class="product-detail">
+
+         <div class="back-to-home">
+            <i class="ti-arrow-left"></i>
+            <span>Trở lại</span>
+         </div>
+         
+         <div class="details ">
+
+            <div class="details-img ">
+               <img src="./Images/Phòng khách/Bàn/83783-ban-nuoc-pop-go-nau.jpg" alt="">
+            </div>
+
+            <div class="info">
+               <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque ipsum corrupti simil</h2>
+               <div class="info-evalute">
+                  <ul> 
+                     <li><i class="ti-star"></i></li>
+                     <li><i class="ti-star"></i></li>
+                     <li><i class="ti-star"></i></li>
+                     <li><i class="ti-star"></i></li>
+                     <li><i class="ti-star"></i></li>
+                  </ul>
+                  <div class="num-sold">
+                     <span>14k</span>
+                     <span>Đã bán</span>
+                  </div>
+               </div>
+               <div class="details-price">
+                  <div class="second-price">₫60000</div>
+                  <div class="first-price">₫39000</div>
+                  <div class="discount-price">
+                     <span>35%</span>
+                     <span>GIẢM</span>
+                  </div>
+               </div>
+               <div class="transport">
+                  <span>Vận chuyển:</span>
+                  <span class="transport-fee">Miễn phí vận chuyển</span>
+               </div>
+               <div class="detail-description">
+                  <span>Mô tả: </span>
+                  <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis dignissimos quibusdam ex, tempora molestias porro, doloribus, commodi nesciunt animi error eaque quisquam recusandae. Temporibus pariatur nobis, animi ea eveniet neque.</span>
+               </div>
+               <div class="quantity">
+                  <span>Số lượng</span>
+                  <div class="quantity-input">
+                     <button class="btn-quantity-desc">-</button>
+                     <input type="number" name="" value="1" min="1" step="1">
+                     <button class="btn-quantity-asc">+</button>
+                  </div>
+               </div>
+             
+               <div class="details-buy">
+                  <button class="add-to-cart">
+                     <i class="ti-shopping-cart"></i>
+                     <span>thêm vào giỏ hàng</span>
+                  </button>
+                  <button class="buy">mua ngay</button>
+               </div>
+            </div>
+         
+         </div>
+      </div>
+
+      <!-- FOOTER -->
       <footer id="footer">
          <div class="footer-block">
             <h2>chăm sóc khách hàng</h2>
@@ -536,6 +603,10 @@
          </div>
          
       </footer>
+
+      <form action="" method="post">
+
+      </form>
    </div>
    <script src="js/main.js"></script>
 </body>
