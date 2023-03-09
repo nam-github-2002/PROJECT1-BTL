@@ -13,18 +13,31 @@ let btns = [...btnContainer.getElementsByTagName("button")];
 
 let currentPage = [...document.querySelectorAll(".current_numpage")];
 let totalPage = [...document.querySelectorAll(".total_numpage")];
-let productPageSwitch =[...document.querySelectorAll(".numpage_switchBtn")];
-let switchLeft = [...document.querySelectorAll(".numpage_switchBtn .ti-angle-left"),
+let productPageSwitch = [...document.querySelectorAll(".numpage_switchBtn")];
+let switchLeft = [
+    ...document.querySelectorAll(".numpage_switchBtn .ti-angle-left"),
 ];
-let switchRight = [...document.querySelectorAll(".numpage_switchBtn .ti-angle-right"),
+let switchRight = [
+    ...document.querySelectorAll(".numpage_switchBtn .ti-angle-right"),
 ];
 
 let workRoom = document.querySelector(".phong-lam-viec");
 let livingRoom = document.querySelector(".phong-khach");
 let diningRoom = document.querySelector(".phong-an");
 let kitchen = document.querySelector(".phong-bep");
-let allType = document.querySelector(".default")
+let allType = document.querySelector(".default");
 let submitFilterPrice = document.querySelector(".submit-filter-price");
+
+// VALIDATION
+let validateForm = document.querySelector(".validate");
+let openLoginBtn = [...document.querySelectorAll(".log-in")];
+let openRegistorBtn = [...document.querySelectorAll(".registor")];
+
+let closeValidateBtn = [...document.querySelectorAll(".close-validate")];
+let registorForm = document.getElementById("registor");
+let registorBtn = document.querySelector(".validate-nav .registor-nav");
+let loginForm = document.getElementById("login");
+let loginBtn = document.querySelector(".validate-nav .log-in-nav");
 
 // CHUYỂN SLIDE
 let start = 0;
@@ -566,9 +579,11 @@ for (let i = 0; i < switchLeft.length; i++) {
         end -= 10;
         mainProductList.innerHTML = renderProduct(filterProductList);
 
-        let productItems = []
-        productItems = [...mainProductList.querySelectorAll(".main_product-item")];
-        renderDetail(productItems,filterProductList);
+        let productItems = [];
+        productItems = [
+            ...mainProductList.querySelectorAll(".main_product-item"),
+        ];
+        renderDetail(productItems, filterProductList);
 
         currentPageNum -= 1;
         currentPage[i].innerText = currentPageNum;
@@ -577,7 +592,6 @@ for (let i = 0; i < switchLeft.length; i++) {
         if (currentPageNum == 1) {
             switchLeft[i].classList.remove("canUse");
         }
-   
     });
     switchRight[i].addEventListener("click", function () {
         if (end >= filterProductList.length || currentPageNum == totalPageNum)
@@ -587,9 +601,11 @@ for (let i = 0; i < switchLeft.length; i++) {
         end += 10;
         mainProductList.innerHTML = renderProduct(filterProductList);
 
-        let productItems = []
-        productItems = [...mainProductList.querySelectorAll(".main_product-item")];
-        renderDetail(productItems,filterProductList);
+        let productItems = [];
+        productItems = [
+            ...mainProductList.querySelectorAll(".main_product-item"),
+        ];
+        renderDetail(productItems, filterProductList);
 
         currentPageNum += 1;
         currentPage[i].innerText = currentPageNum;
@@ -598,7 +614,6 @@ for (let i = 0; i < switchLeft.length; i++) {
         if (currentPageNum == totalPageNum) {
             switchRight[i].classList.remove("canUse");
         }
-      
     });
 }
 
@@ -703,9 +718,9 @@ workRoom.onclick = () => {
     totalPage.forEach((page) => (page.innerHTML = totalPageNum));
     currentPageNum = 1;
     currentPage.innerHTML = currentPageNum;
-    let productItems = []
+    let productItems = [];
     productItems = [...mainProductList.querySelectorAll(".main_product-item")];
-    renderDetail(productItems,filterProductList);
+    renderDetail(productItems, filterProductList);
 };
 
 livingRoom.onclick = () => {
@@ -718,9 +733,9 @@ livingRoom.onclick = () => {
     totalPage.forEach((page) => (page.innerHTML = totalPageNum));
     currentPageNum = 1;
     currentPage.innerHTML = currentPageNum;
-    let productItems = []
+    let productItems = [];
     productItems = [...mainProductList.querySelectorAll(".main_product-item")];
-    renderDetail(productItems,filterProductList);
+    renderDetail(productItems, filterProductList);
 };
 
 diningRoom.onclick = () => {
@@ -733,9 +748,9 @@ diningRoom.onclick = () => {
     totalPage.forEach((page) => (page.innerHTML = totalPageNum));
     currentPageNum = 1;
     currentPage.innerHTML = currentPageNum;
-    let productItems = []
+    let productItems = [];
     productItems = [...mainProductList.querySelectorAll(".main_product-item")];
-    renderDetail(productItems,filterProductList);
+    renderDetail(productItems, filterProductList);
 };
 
 kitchen.onclick = () => {
@@ -748,9 +763,9 @@ kitchen.onclick = () => {
     totalPage.forEach((page) => (page.innerHTML = totalPageNum));
     currentPageNum = 1;
     currentPage.innerHTML = currentPageNum;
-    let productItems = []
+    let productItems = [];
     productItems = [...mainProductList.querySelectorAll(".main_product-item")];
-    renderDetail(productItems,filterProductList);
+    renderDetail(productItems, filterProductList);
 };
 
 allType.onclick = () => {
@@ -759,10 +774,10 @@ allType.onclick = () => {
     totalPage.forEach((page) => (page.innerHTML = totalPageNum));
     currentPageNum = 1;
     currentPage.innerHTML = currentPageNum;
-    let productItems = []
+    let productItems = [];
     productItems = [...mainProductList.querySelectorAll(".main_product-item")];
-    renderDetail(productItems,products);
-}
+    renderDetail(productItems, products);
+};
 
 submitFilterPrice.onclick = () => {
     let filterPriceMin = parseInt(
@@ -781,9 +796,9 @@ submitFilterPrice.onclick = () => {
 
     currentPageNum = 1;
     currentPage.innerHTML = currentPageNum;
-    let productItems = []
+    let productItems = [];
     productItems = [...mainProductList.querySelectorAll(".main_product-item")];
-    renderDetail(productItems,filterProductList);
+    renderDetail(productItems, filterProductList);
 };
 
 //RENDER TRANG CHI TIẾT SẢN PHẨM
@@ -791,7 +806,7 @@ let productItems = [...mainProductList.querySelectorAll(".main_product-item")];
 let productDetail = document.querySelector(".product-detail");
 let mainPage = document.getElementById("main");
 for (let i = 0; i < productItems.length; i++) {
-    productItems[i].addEventListener('click', function () {
+    productItems[i].addEventListener("click", function () {
         let currentItemProduct = null;
         for (let product of filterProductList) {
             if (product.id === parseInt(productItems[i].id))
@@ -801,27 +816,26 @@ for (let i = 0; i < productItems.length; i++) {
         renderItemDetail(currentItemProduct);
     });
 }
-function renderDetail(productItems,productRepo) {
+function renderDetail(productItems, productRepo) {
     for (let i = 0; i < productItems.length; i++) {
-        productItems[i].addEventListener('click', function () {
+        productItems[i].addEventListener("click", function () {
             let currentItemProduct = null;
             for (let product of productRepo) {
                 if (product.id === parseInt(productItems[i].id))
                     currentItemProduct = product;
             }
-    
+
             renderItemDetail(currentItemProduct);
         });
     }
 }
-renderDetail(productItems,filterProductList);
-
+renderDetail(productItems, filterProductList);
 
 function renderItemDetail(productItem) {
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
     mainPage.style.display = "none";
     productDetail.style.display = "block";
-    
+
     productDetail.innerHTML = `
         
     <div class="back-to-home">
@@ -889,11 +903,55 @@ function renderItemDetail(productItem) {
     
     `;
     let homeBtn = document.querySelector(".back-to-home");
-    console.log(homeBtn);
-    homeBtn.addEventListener('click',function() {
-        productDetail.style.display = "none"; 
+    homeBtn.addEventListener("click", function () {
+        productDetail.style.display = "none";
         mainPage.style.display = "block";
-        window.scrollTo(0,780)
-    }) 
-   
+        window.scrollTo(0, 780);
+    });
+    var buyBtn = [...document.querySelectorAll("button.buy")];
+    buyBtn.map((e) => {
+        e.addEventListener("click", function () {
+            validateForm.style.display = "block";
+            openLoginForm()
+        });
+    });
 }
+
+// VALIDATION
+
+
+function openLoginForm() {
+    loginForm.style.display = "block";
+    registorForm.style.display = "none";
+    loginBtn.classList.add("validate-current");
+    registorBtn.classList.remove("validate-current");
+}
+function openRegistorForm() {
+    registorForm.style.display = "block";
+    loginForm.style.display = "none";
+    registorBtn.classList.add("validate-current");
+    loginBtn.classList.remove("validate-current");
+}
+loginBtn.onclick = () => {
+    openLoginForm()
+};
+registorBtn.onclick = () => {
+    openRegistorForm()
+};
+openLoginBtn.map((e) => {
+    e.addEventListener("click", function () {
+        validateForm.style.display = "block";
+        openLoginForm()
+    });
+});
+openRegistorBtn.map((e) => {
+    e.addEventListener("click", function () {
+        validateForm.style.display = "block";
+        openRegistorForm()
+    });
+});
+closeValidateBtn.map((e) => {
+    e.addEventListener("click", function () {
+        validateForm.style.display = "none";
+    });
+});

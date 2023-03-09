@@ -55,8 +55,8 @@
                            <img src="Images/thongbao.png" alt="">
                            <span class="suggess-login-text">Đăng nhập để xem thông báo</span>
                            <div class="right_info_view_authenticate">
-                              <a href="#login"><span>Đăng nhập</span></a>
-                              <a href="#registor"><span>Đăng kí</span></a>
+                              <a href="#log-in" class="log-in"><span>Đăng nhập</span></a>
+                              <a href="#registor" class="registor"><span>Đăng kí</span></a>
                            </div>
                         </div>
                         
@@ -77,9 +77,9 @@
                         </div>
                      </li>
 
-                     <li class="nav-list-right_signup">Đăng kí</li>
+                     <li class="nav-list-right_signup registor">Đăng kí</li>
 
-                     <li class="nav-list-right_login">Đăng nhập</li>
+                     <li class="nav-list-right_login log-in">Đăng nhập</li>
                   </ul>
                </li>
             </ul>
@@ -549,7 +549,7 @@
                      <i class="ti-shopping-cart"></i>
                      <span>thêm vào giỏ hàng</span>
                   </button>
-                  <button class="buy">mua ngay</button>
+                  <button class="buy log-in">mua ngay</button>
                </div>
             </div>
          
@@ -603,11 +603,58 @@
          </div>
          
       </footer>
-
-      <form action="" method="post">
-
-      </form>
+      
    </div>
+
+  
+      <div class="validate">
+         <div class="validate-wraper">
+            
+            <nav class="validate-nav">
+               <div class="registor-nav validate-current">đăng kí</div>
+               <div class="log-in-nav">đăng nhập</div>
+            </nav>
+                           
+                  <!-- REGISTOR -->
+
+            <form action="" method="" id="registor">
+               <div class="form-group">
+                  <label for="email">email</label>
+                  <input type="email" id="registor-email">
+               </div>
+               <div class="form-group">
+                  <label for="password">Mật khẩu</label>
+                  <input type="password" id="registor-password">
+               </div>
+               <div class="form-group">
+                  <label for="repeat-password">Nhập lại mật khẩu</label>
+                  <input type="password" id="registor-repeat-password">
+               </div>
+               <div class="form-group">
+                  <input type="submit" name="registor" id="registor-submit" value="Đăng kí">
+                  <button on class="close-validate">Đóng</button>
+               </div>
+            </form>
+                           
+                  <!-- LOGIN -->
+
+            <form action="" method="" id="login">
+               <div class="form-group">
+                  <label for="email">email</label>
+                  <input type="email" id="login-email">
+               </div>
+               <div class="form-group">
+                  <label for="password">password</label>
+                  <input type="password" id="login-password">
+               </div>
+               <div class="form-group">
+                  <input type="submit" name="login" id="login-submit" value="Đăng nhập">
+                  <button on class="close-validate">Đóng</button>
+               </div>
+            </form>
+
+         </div>   
+      </div>
    <script src="js/main.js"></script>
 </body>
 </html>
