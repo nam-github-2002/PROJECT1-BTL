@@ -563,60 +563,83 @@ for (let i = 0; i < products.length; i++) {
     products[i].id = i + 1;
 }
 // RENDER
-mainProductList.innerHTML = renderProduct(products);
-
+mainProductList.innerHTML = renderProduct(products, start, end);
 let filterProductList = products;
-// CHUYỂN TRANG SẢN PHẨM
 let totalPageNum = Math.floor(filterProductList.length / 10 + 1);
-for (let i = 0; i < switchLeft.length; i++) {
-    totalPage[i].innerText = totalPageNum;
-    var currentPageNum = parseInt(currentPage[i].innerText);
+let currentPageNum = parseInt(currentPage[1].innerText);
+// CHUYỂN TRANG SẢN PHẨM
+function switchPage(filterProductList,totalPageNum,currentPageNum,start,end)
+{
+    for (let i = 0; i < switchLeft.length; i++) {
+        totalPage[i].innerText = totalPageNum;
+        if(totalPageNum === 1) {
+            switchRight[i].classList.remove('canUse');
+            switchLeft[i].classList.remove('canUse');
+        } else switchRight[i].classList.add('canUse')
 
-    switchLeft[i].addEventListener("click", function () {
-        if (start < 10 || currentPageNum == 1) return;
-
-        start -= 10;
-        end -= 10;
-        mainProductList.innerHTML = renderProduct(filterProductList);
-
-        let productItems = [];
-        productItems = [
-            ...mainProductList.querySelectorAll(".main_product-item"),
-        ];
-        renderDetail(productItems, filterProductList);
-
-        currentPageNum -= 1;
-        currentPage[i].innerText = currentPageNum;
-
-        switchRight[i].classList.add("canUse");
-        if (currentPageNum == 1) {
+        if (currentPageNum === 1)
             switchLeft[i].classList.remove("canUse");
-        }
-    });
-    switchRight[i].addEventListener("click", function () {
-        if (end >= filterProductList.length || currentPageNum == totalPageNum)
-            return;
-
-        start += 10;
-        end += 10;
-        mainProductList.innerHTML = renderProduct(filterProductList);
-
-        let productItems = [];
-        productItems = [
-            ...mainProductList.querySelectorAll(".main_product-item"),
-        ];
-        renderDetail(productItems, filterProductList);
-
-        currentPageNum += 1;
-        currentPage[i].innerText = currentPageNum;
-
-        switchLeft[i].classList.add("canUse");
-        if (currentPageNum == totalPageNum) {
+        if (currentPageNum === totalPageNum)
             switchRight[i].classList.remove("canUse");
-        }
-    });
-}
 
+        switchLeft[i].addEventListener("click", function () {
+            if (start < 10 || currentPageNum === 1) {
+                return;
+            } 
+            switchRight[i].classList.add("canUse");
+            
+            currentPageNum -= 1;
+            currentPage[i].innerText = currentPageNum;
+            if (start < 10 || currentPageNum === 1)
+                switchLeft[i].classList.remove("canUse");
+
+            start -= 10;
+            end -= 10;
+            mainProductList.innerHTML = renderProduct(
+                filterProductList,
+                start,
+                end
+            );
+
+            let productItems = [];
+            productItems = [
+                ...mainProductList.querySelectorAll(".main_product-item"),
+            ];
+            renderDetail(productItems, filterProductList);
+
+        });
+        
+        switchRight[i].addEventListener("click", function () {
+            
+            if (end >= filterProductList.length || currentPageNum === totalPageNum) {
+                return;
+            }
+            switchLeft[i].classList.add("canUse");
+            
+            currentPageNum += 1;
+            currentPage[i].innerText = currentPageNum;
+            if (end >= filterProductList.length || currentPageNum === totalPageNum)
+                switchRight[i].classList.remove("canUse");
+
+            start += 10;
+            end += 10;
+            mainProductList.innerHTML = renderProduct(
+                filterProductList,
+                start,
+                end
+            );
+
+            let productItems = [];
+            productItems = [
+                ...mainProductList.querySelectorAll(".main_product-item"),
+            ];
+            renderDetail(productItems, filterProductList);
+        });
+
+       
+    }
+}
+switchPage(products,totalPageNum,currentPageNum,start,end);
 // HÀM RENDER NGÔI SAO
 function renderStar(star) {
     let html = ``;
@@ -631,7 +654,7 @@ function renderStar(star) {
 }
 
 // HÀM RENDER DANH SÁCH SẢN PHẨM
-function renderProduct(products) {
+function renderProduct(products, start, end) {
     let itemProducts = products.map((product) => {
         return `
        <div class="main_product-item" id="${product.id}">
@@ -707,19 +730,22 @@ for (let i = 0; i < btns.length; i++) {
         this.classList.add("active");
     });
 }
-
 workRoom.onclick = () => {
     filterProductList = products.filter(
         (product) => product.type == "phonglamviec"
     );
-    mainProductList.innerHTML = renderProduct(filterProductList);
+    start = 0;
+    end = 10;
+    mainProductList.innerHTML = renderProduct(filterProductList, start, end);
 
     totalPageNum = Math.floor(filterProductList.length / 10 + 1);
     totalPage.forEach((page) => (page.innerHTML = totalPageNum));
     currentPageNum = 1;
-    currentPage.innerHTML = currentPageNum;
+    currentPage.forEach((page) => (page.innerHTML = currentPageNum));
+
     let productItems = [];
     productItems = [...mainProductList.querySelectorAll(".main_product-item")];
+    switchPage(filterProductList,totalPageNum,currentPageNum,start,end)
     renderDetail(productItems, filterProductList);
 };
 
@@ -727,14 +753,16 @@ livingRoom.onclick = () => {
     filterProductList = products.filter(
         (product) => product.type === "phongkhach"
     );
-    mainProductList.innerHTML = renderProduct(filterProductList);
-
+    start = 0;
+    end = 10;
+    mainProductList.innerHTML = renderProduct(filterProductList, start, end);
     totalPageNum = Math.floor(filterProductList.length / 10 + 1);
     totalPage.forEach((page) => (page.innerHTML = totalPageNum));
     currentPageNum = 1;
-    currentPage.innerHTML = currentPageNum;
+    currentPage.forEach((page) => (page.innerHTML = currentPageNum));
     let productItems = [];
     productItems = [...mainProductList.querySelectorAll(".main_product-item")];
+    switchPage(filterProductList,totalPageNum,currentPageNum,start,end);
     renderDetail(productItems, filterProductList);
 };
 
@@ -742,14 +770,17 @@ diningRoom.onclick = () => {
     filterProductList = products.filter(
         (product) => product.type === "phongan"
     );
-    mainProductList.innerHTML = renderProduct(filterProductList);
+    start = 0;
+    end = 10;
+    mainProductList.innerHTML = renderProduct(filterProductList, start, end);
 
     totalPageNum = Math.floor(filterProductList.length / 10 + 1);
     totalPage.forEach((page) => (page.innerHTML = totalPageNum));
     currentPageNum = 1;
-    currentPage.innerHTML = currentPageNum;
+    currentPage.forEach((page) => (page.innerHTML = currentPageNum));
     let productItems = [];
     productItems = [...mainProductList.querySelectorAll(".main_product-item")];
+    switchPage(filterProductList,totalPageNum,currentPageNum,start,end);
     renderDetail(productItems, filterProductList);
 };
 
@@ -757,25 +788,34 @@ kitchen.onclick = () => {
     filterProductList = products.filter(
         (product) => product.type === "phongbep"
     );
-    mainProductList.innerHTML = renderProduct(filterProductList);
+    start = 0;
+    end = 10;
+    mainProductList.innerHTML = renderProduct(filterProductList, start, end);
 
     totalPageNum = Math.floor(filterProductList.length / 10 + 1);
     totalPage.forEach((page) => (page.innerHTML = totalPageNum));
     currentPageNum = 1;
-    currentPage.innerHTML = currentPageNum;
+    currentPage.forEach((page) => (page.innerHTML = currentPageNum));
+
     let productItems = [];
     productItems = [...mainProductList.querySelectorAll(".main_product-item")];
+    switchPage(filterProductList,totalPageNum,currentPageNum,start,end);
     renderDetail(productItems, filterProductList);
 };
 
 allType.onclick = () => {
-    mainProductList.innerHTML = renderProduct(products);
+    start = 0;
+    end = 10;
+    mainProductList.innerHTML = renderProduct(products, start, end);
+
     totalPageNum = Math.floor(products.length / 10 + 1);
     totalPage.forEach((page) => (page.innerHTML = totalPageNum));
     currentPageNum = 1;
-    currentPage.innerHTML = currentPageNum;
+    currentPage.forEach((page) => (page.innerHTML = currentPageNum));
+
     let productItems = [];
     productItems = [...mainProductList.querySelectorAll(".main_product-item")];
+    switchPage(products,totalPageNum,currentPageNum,start,end);
     renderDetail(productItems, products);
 };
 
@@ -792,12 +832,16 @@ submitFilterPrice.onclick = () => {
             product.firstPrice >= filterPriceMin &&
             product.firstPrice <= filterPriceMax
     );
-    mainProductList.innerHTML = renderProduct(filterProductList);
+    mainProductList.innerHTML = renderProduct(filterProductList, start, end);
 
+    totalPageNum = Math.floor(filterProductList.length / 10 + 1);
+    totalPage.forEach((page) => (page.innerHTML = totalPageNum));
     currentPageNum = 1;
-    currentPage.innerHTML = currentPageNum;
+    currentPage.forEach((page) => (page.innerHTML = currentPageNum));
+
     let productItems = [];
     productItems = [...mainProductList.querySelectorAll(".main_product-item")];
+    switchPage(filterProductList,totalPageNum,currentPageNum,start,end);
     renderDetail(productItems, filterProductList);
 };
 
@@ -805,17 +849,7 @@ submitFilterPrice.onclick = () => {
 let productItems = [...mainProductList.querySelectorAll(".main_product-item")];
 let productDetail = document.querySelector(".product-detail");
 let mainPage = document.getElementById("main");
-for (let i = 0; i < productItems.length; i++) {
-    productItems[i].addEventListener("click", function () {
-        let currentItemProduct = null;
-        for (let product of filterProductList) {
-            if (product.id === parseInt(productItems[i].id))
-                currentItemProduct = product;
-        }
 
-        renderItemDetail(currentItemProduct);
-    });
-}
 function renderDetail(productItems, productRepo) {
     for (let i = 0; i < productItems.length; i++) {
         productItems[i].addEventListener("click", function () {
@@ -912,13 +946,12 @@ function renderItemDetail(productItem) {
     buyBtn.map((e) => {
         e.addEventListener("click", function () {
             validateForm.style.display = "block";
-            openLoginForm()
+            openLoginForm();
         });
     });
 }
 
 // VALIDATION
-
 
 function openLoginForm() {
     loginForm.style.display = "block";
@@ -933,21 +966,21 @@ function openRegistorForm() {
     loginBtn.classList.remove("validate-current");
 }
 loginBtn.onclick = () => {
-    openLoginForm()
+    openLoginForm();
 };
 registorBtn.onclick = () => {
-    openRegistorForm()
+    openRegistorForm();
 };
 openLoginBtn.map((e) => {
     e.addEventListener("click", function () {
         validateForm.style.display = "block";
-        openLoginForm()
+        openLoginForm();
     });
 });
 openRegistorBtn.map((e) => {
     e.addEventListener("click", function () {
         validateForm.style.display = "block";
-        openRegistorForm()
+        openRegistorForm();
     });
 });
 closeValidateBtn.map((e) => {
@@ -955,3 +988,82 @@ closeValidateBtn.map((e) => {
         validateForm.style.display = "none";
     });
 });
+
+let checkValidate = () => {
+    // Check email
+    let emailRegis = document.getElementById("registor-email");
+    let messageEmailRegis = document.querySelector(
+        "#registor-email + .form-message"
+    );
+    var isTrueMail = false;
+
+    let mailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    emailRegis.oninput = () => {
+        if (messageEmailRegis.value == undefined)
+            messageEmailRegis.innerText = "";
+
+        isTrueMail = mailRegex.test(emailRegis.value);
+        messageEmailRegis.innerText = isTrueMail ? "" : "Email không hợp lệ";
+    };
+
+    // CHECK PASSWORD
+    let passRegis = document.getElementById("registor-password");
+    let messagePassRegis = document.querySelector(
+        "#registor-password + .form-message"
+    );
+
+    let strongPass =
+        /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})/;
+    let mediumPass =
+        /((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))/;
+
+    let hasPass = false;
+    passRegis.oninput = () => {
+        setTimeout(() => {
+            if (passRegis.value == undefined) passRegis.innerText = "";
+
+            let isStrongPass = strongPass.test(passRegis.value);
+            let isMediumPass = mediumPass.test(passRegis.value);
+            if (isStrongPass) {
+                messagePassRegis.innerHTML = "Mật khẩu mạnh";
+                messagePassRegis.style.color = "green";
+            } else if (isMediumPass) {
+                messagePassRegis.innerHTML = "Mật khẩu bình thường";
+                messagePassRegis.style.color = "orange";
+            } else {
+                messagePassRegis.innerHTML = "Mật khẩu yếu, nhập lại";
+                messagePassRegis.style.color = "red";
+            }
+            hasPass = isStrongPass || isMediumPass ? true : false;
+        }, 400);
+    };
+
+    // XÁC NHẬN MẬT KHẨU NHẬP LẠI
+    let passRepeat = document.getElementById("registor-repeat-password");
+    let messagePassRepeat = document.querySelector(
+        "#registor-repeat-password + .form-message"
+    );
+    let isTrueRepeat = false;
+
+    passRepeat.oninput = () => {
+        setTimeout(() => {
+            isTrueRepeat = passRepeat.value === passRegis.value;
+            if (isTrueRepeat) {
+                messagePassRepeat.innerText = "Mật khẩu trùng khớp";
+                messagePassRepeat.style.color = "green";
+            } else messagePassRepeat.innerText = "Mật khẩu không trùng khớp";
+        }, 500);
+    };
+
+    // SUBMIT
+    let regisSubmit = document.getElementById("registor-submit");
+    regisSubmit.onclick = () => {
+        if (isTrueMail && hasPass && isTrueRepeat) {
+            let strEmail = emailRegis.value.toString();
+            let strPassword = passRegis.value.toString();
+            localStorage.setItem("email", strEmail);
+            localStorage.setItem("password", strPassword);
+        }
+    };
+};
+checkValidate();
